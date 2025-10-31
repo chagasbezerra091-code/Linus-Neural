@@ -1,0 +1,36 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!--
+     AndroidManifest.xml — Linus Neural Project
+     Define o serviço de depuração neural como um componente de sistema seguro.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lnp.dev.debug">
+
+    <!-- Permissão personalizada -->
+    <permission
+        android:name="com.lnp.permission.NEURAL_DEBUG"
+        android:label="Depuração Neural"
+        android:description="Permite acesso ao sistema neural interno"
+        android:protectionLevel="signature" />
+
+    <application
+        android:label="Neural Debug Core"
+        android:icon="@mipmap/ic_launcher"
+        android:allowBackup="false"
+        android:supportsRtl="true">
+
+        <!-- Serviço principal de depuração -->
+        <service
+            android:name=".service.NeuralDebugService"
+            android:exported="true"
+            android:enabled="true"
+            android:permission="com.lnp.permission.NEURAL_DEBUG">
+
+            <intent-filter>
+                <action android:name="com.lnp.dev.debug.NEURAL_DEBUG_SERVICE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+
+    </application>
+</manifest>
