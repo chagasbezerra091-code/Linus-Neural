@@ -1,0 +1,9 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!--
+     permissions.xml — Linus Neural Project
+     Declara permissão de depuração neural no ambiente de sistema.
+-->
+<permissions>
+    <permission name="com.lnp.permission.NEURAL_DEBUG"
+        protectionLevel="signature" />
+</permissions>
